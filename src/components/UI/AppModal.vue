@@ -7,15 +7,36 @@ const emits = defineEmits(['close', 'form-data'])
 
 const task = {
   name: '',
-  description: ''
+  description: '',
+  date: '',
+  time: ''
 }
 const formData = () => {
+  const currentDate = new Date()
   task.id = Date.now()
+  task.date = getCurrentDate(currentDate)
+  task.time = getCurrentTime(currentDate)
+  console.log(task);
   emits('form-data', task)
   emits('close')
 }
 const close = () => {
   emits('close')
+}
+
+const getCurrentDate = (date) => {
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // Месяцы в JavaScript начинаются с 0
+  const year = date.getFullYear();
+
+  return `${day}.${month}.${year}`;
+}
+
+const getCurrentTime = (date) => {
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+
+  return `${hours}:${minutes}`;
 }
 </script>
 
