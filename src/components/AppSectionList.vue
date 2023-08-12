@@ -6,7 +6,7 @@
 
 <style scoped>
 .section-list {
-  padding: 5px;
+  padding: var(--section-padding);
   transition: overflow 0.3s linear;
   overflow-y: hidden;
   scrollbar-gutter: stable;

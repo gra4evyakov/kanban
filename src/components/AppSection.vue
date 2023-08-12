@@ -17,17 +17,17 @@ const { title } = defineProps({
 <style scoped>
 .section {
   overflow: hidden;
-  padding: 5px;
+  padding: var(--section-padding);
   display: grid;
   grid-template-rows: min-content 1fr;
-  row-gap: 10px;
+  row-gap: var(--section-gap);
   background-color: rgb(243, 242, 242);
-  border-radius: 10px;
-  box-shadow: 0px 0px 2px grey;
+  border-radius: var(--section-radius);
+  box-shadow: var(--section-shadow)
 }
 
 .section-title {
-  padding: 5px;
+  padding: var(--section-padding);
   text-transform: uppercase;
 }
 </style>
