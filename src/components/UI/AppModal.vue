@@ -16,7 +16,6 @@ const formData = () => {
   task.id = Date.now()
   task.date = getCurrentDate(currentDate)
   task.time = getCurrentTime(currentDate)
-  console.log(task);
   emits('form-data', task)
   emits('close')
 }
