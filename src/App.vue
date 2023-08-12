@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watchEffect } from 'vue'
+import { ref } from 'vue'
 import { useKanbanStore } from './stores/kanban'
 import draggable from 'vuedraggable'
 
@@ -16,11 +16,6 @@ import AppModal from './components/UI/AppModal.vue'
 
 const showModal = ref(false)
 const kanban = useKanbanStore()
-watchEffect(() => {
-  for (const sectionKey of Object.keys(kanban.sections)) {
-    localStorage.setItem(`kanban_${sectionKey}`, JSON.stringify(kanban.sections[sectionKey]))
-  }
-})
 
 const toggleModal = () => {
   showModal.value = !showModal.value
@@ -40,6 +35,7 @@ const addTask = (task) => {
         <AppPlusIcon />
       </AppButton>
       <AppInput rounded background placeholder="Search" />
+      <!-- v-model="kanban.searchQuery" чтобы работал поиск-->
     </AppTools>
     <div class="sections">
       <AppSection
@@ -49,14 +45,7 @@ const addTask = (task) => {
         :length="_.length"
       >
         <AppSectionList>
-          <draggable
-            class="draggable"
-            v-model="kanban.sections[title]"
-            group="tasks"
-            @start="drag = true"
-            @end="drag = false"
-            item-key="id"
-          >
+          <draggable class="draggable" v-model="kanban.sections[title]" group="tasks" item-key="id">
             <template #item="{ element }">
               <Appsectionlistitem
                 :key="element.id"
