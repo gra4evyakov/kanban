@@ -8,7 +8,7 @@
 .section-list {
   padding: var(--section-padding);
   transition: overflow 0.3s linear;
-  overflow-y: hidden;
+  overflow: hidden;
   scrollbar-gutter: stable;
   /* -ms-overflow-style: none;
   scrollbar-width: none; */
