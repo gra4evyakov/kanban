@@ -13,6 +13,7 @@ import AppButton from './components/UI/AppButton.vue'
 import AppInput from './components/UI/AppInput.vue'
 import AppPlusIcon from './components/icons/AppPlusIcon.vue'
 import AppModal from './components/UI/AppModal.vue'
+import AppLogoIcon from './components/icons/AppLogoIcon.vue'
 
 const showModal = ref(false)
 const kanban = useKanbanStore()
@@ -31,6 +32,9 @@ const addTask = (task) => {
 <template>
   <div class="kanban">
     <AppTools title="Board">
+      <template v-slot:icon>
+        <AppLogoIcon />
+      </template>
       <AppButton @click="toggleModal" rounded background>
         <AppPlusIcon />
       </AppButton>
