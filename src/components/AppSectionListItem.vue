@@ -28,9 +28,15 @@ const openDescription = () => {
   >
     <div class="item-title">
       <p>{{ task.name }}</p>
-      <AppButton class="section-list__button" @click="deleteItem" rounded>
-        <AppCloseIcon />
-      </AppButton>
+      <div class="item-tools">
+        <AppButton class="section-list__button" @click="deleteItem" rounded>
+          <AppCloseIcon />
+        </AppButton>
+      </div>
+    </div>
+    <div class="item-date">
+      <span class="time">{{ task.time }}</span>
+      <span class="date">{{ task.date }}</span>
     </div>
     <div class="arrow">
       <AppArrowIcon
@@ -55,12 +61,13 @@ const openDescription = () => {
   margin-bottom: 10px;
   display: grid;
   grid-template-rows: min-content min-content;
-  border-radius: 5px;
+  border-radius: var(--section-radius);
   background-color: white;
-  box-shadow: 0px 0px 2px grey;
+  box-shadow: var(--section-shadow);
   transition: box-shadow 0.2s ease-in-out;
 }
 .item-title {
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,11 +75,17 @@ const openDescription = () => {
 
 .item-description {
   margin-top: 10px;
-  font-size: 0.7rem;
+  font-size: 0.7em;
+}
+
+.item-date {
+  display: flex;
+  justify-content: space-between;
+  font-size: .7em;
 }
 
 .section-list__item:hover {
-  box-shadow: 0px 0px 5px grey;
+  box-shadow: var(--section-shadow)
 }
 
 .section-list__button {
