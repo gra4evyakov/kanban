@@ -26,15 +26,15 @@ const updateValue = (value) => {
   width: 100%;
   padding: 5px 10px;
   border: none;
-  background-color: gainsboro;
+  background-color: var(--ui-background);
   transition: box-shadow 0.2s ease-in-out;
 }
 
 .input:hover,
 .input:focus {
-  box-shadow: 0px 0px 10px gainsboro;
+  box-shadow: var(--ui-shadow)
 }
 .rounded {
-  border-radius: 5px;
+  border-radius: var(--ui-radius)
 }
 </style>

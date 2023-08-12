@@ -18,17 +18,17 @@ defineProps({
 
 <style scoped>
 .button {
-  padding: 5px 5px;
+  padding: var(--base-padding);
   height: fit-content;
   border: none;
-  border-radius: 5px;
-  background-color: gainsboro;
+  border-radius: var(--ui-radius);
+  background-color: var(--ui-background);
   transition: box-shadow 0.2s ease-in-out;
 }
 
 .button:hover,
 .button:focus {
-  box-shadow: 0px 0px 15px gainsboro;
+  box-shadow: var(--ui-shadow)
 }
 
 .rounded {
