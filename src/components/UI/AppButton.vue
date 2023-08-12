@@ -28,7 +28,7 @@ defineProps({
 
 .button:hover,
 .button:focus {
-  box-shadow: var(--ui-shadow)
+  box-shadow: var(--ui-shadow);
 }
 
 .rounded {

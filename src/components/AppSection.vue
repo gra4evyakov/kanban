@@ -23,7 +23,7 @@ const { title } = defineProps({
   row-gap: var(--section-gap);
   background-color: rgb(243, 242, 242);
   border-radius: var(--section-radius);
-  box-shadow: var(--section-shadow)
+  box-shadow: var(--section-shadow);
 }
 
 .section-title {

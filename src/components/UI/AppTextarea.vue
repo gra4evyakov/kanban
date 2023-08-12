@@ -34,10 +34,10 @@ const updateValue = (value) => {
 
 .textarea:hover,
 .textarea:focus {
-  box-shadow: var(--ui-shadow)
+  box-shadow: var(--ui-shadow);
 }
 
 .rounded {
-  border-radius: var(--ui-radius)
+  border-radius: var(--ui-radius);
 }
 </style>

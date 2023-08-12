@@ -81,11 +81,11 @@ const openDescription = () => {
 .item-date {
   display: flex;
   justify-content: space-between;
-  font-size: .7em;
+  font-size: 0.7em;
 }
 
 .section-list__item:hover {
-  box-shadow: var(--section-shadow)
+  box-shadow: var(--section-shadow);
 }
 
 .section-list__button {
