@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watchEffect} from 'vue'
+import { ref, watchEffect } from 'vue'
 import { useKanbanStore } from './stores/kanban'
 
 import AppSection from './components/AppSection.vue'
