@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue' // добавить computed
 import { defineStore } from 'pinia'
 
 export const useKanbanStore = defineStore('kanban', () => {
@@ -185,6 +185,29 @@ export const useKanbanStore = defineStore('kanban', () => {
       sections[sectionKey].value = JSON.parse(storedSection)
     }
   }
+  watchEffect(() => {
+    for (const sectionKey of Object.keys(sections)) {
+      localStorage.setItem(`kanban_${sectionKey}`, JSON.stringify(sections[sectionKey]))
+    }
+  })
+
+  // РЕАЛИЗАЦИЯ ПОИСКА ЧЕРЕЗ COMPUTED
+
+  // const searchQuery = ref('');
+
+  // const filteredTasks = computed(() => {
+  //     const query = searchQuery.value.toLowerCase();
+  //     const results = {};
+
+  //     for (const sectionKey of Object.keys(sections)) {
+  //       const tasksInSection = sections[sectionKey].value;
+  //       const filteredTasksInSection = tasksInSection.filter(task =>
+  //         task.name.toLowerCase().includes(query) || (task.description && task.description.toLowerCase().includes(query))
+  //       );
+  //       results[sectionKey] = filteredTasksInSection;
+  //     }
+  //     return results;
+  // });
 
   const addTask = (task) => {
     sections.backlog.value.push(task)
@@ -198,8 +221,11 @@ export const useKanbanStore = defineStore('kanban', () => {
     }
   }
 
+  // filteredTasks и seachQuery для поиска
   return {
     sections,
+    // filteredTasks,
+    // searchQuery,
     addTask,
     removeTaskById
   }
