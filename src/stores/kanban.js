@@ -187,7 +187,7 @@ export const useKanbanStore = defineStore('kanban', () => {
   }
   watchEffect(() => {
     for (const sectionKey of Object.keys(sections)) {
-      localStorage.setItem(`kanban_${sectionKey}`, JSON.stringify(sections[sectionKey]))
+      localStorage.setItem(`kanban_${sectionKey}`, JSON.stringify(sections[sectionKey].value))
     }
   })
 
