@@ -6,121 +6,175 @@ export const useKanbanStore = defineStore('kanban', () => {
     backlog: ref([
       {
         id: 1,
-        name: 'перекрасить кнопку'
+        name: 'перекрасить кнопку',
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 2,
         name: 'удалить что-то',
-        description: 'пофигу что'
+        description: 'пофигу что',
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 3,
-        name: 'уволиться'
+        name: 'уволиться',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 4,
-        name: 'тест api'
+        name: 'тест api',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 5,
-        name: 'перекур'
+        name: 'перекур',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 6,
         name: 'сходить в бар',
-        description: 'помни о пиве'
+        description: 'помни о пиве',        
+        time: '11:11',
+        date: '12.08.2023'
       }
     ]),
     inProgress: ref([
       {
         id: 7,
-        name: 'стереть базу данных'
+        name: 'стереть базу данных',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 8,
-        name: 'обновить пк'
+        name: 'обновить пк',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 9,
-        name: 'попросить повышение'
+        name: 'попросить повышение',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 10,
         name: 'покормить кошку',
-        description: 'очень много ест'
+        description: 'очень много ест',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 11,
-        name: 'отдых'
+        name: 'отдых',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 12,
-        name: 'удалить сервер'
+        name: 'удалить сервер',        
+        time: '11:11',
+        date: '12.08.2023'
       }
     ]),
     inQA: ref([
       {
         id: 13,
-        name: 'сделать тестовое'
+        name: 'сделать тестовое',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 14,
-        name: 'переехать'
+        name: 'переехать',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 15,
         name: 'целоваться',
-        description: 'со всеми подряд'
+        description: 'со всеми подряд',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 16,
-        name: 'обниматься'
+        name: 'обниматься',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 17,
-        name: 'зарядка'
+        name: 'зарядка',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 18,
-        name: 'отсылать мемасы'
+        name: 'отсылать мемасы',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 19,
-        name: 'игнорить начальника'
+        name: 'игнорить начальника',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 20,
-        name: 'погулять с собакой'
+        name: 'погулять с собакой',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 21,
-        name: 'смотреть ютуб'
+        name: 'смотреть ютуб',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 22,
-        name: 'встретиться с друзьями'
+        name: 'встретиться с друзьями',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 23,
-        name: 'помыться'
+        name: 'помыться',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 24,
-        name: 'почистить зубки'
+        name: 'почистить зубки',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 25,
-        name: 'улыбаться'
+        name: 'улыбаться',        
+        time: '11:11',
+        date: '12.08.2023'
       }
     ]),
     done: ref([
       {
         id: 26,
-        name: 'работать'
+        name: 'работать',        
+        time: '11:11',
+        date: '12.08.2023'
       },
       {
         id: 27,
-        name: 'не работать'
+        name: 'не работать',        
+        time: '11:11',
+        date: '12.08.2023'
       }
     ])
   }
@@ -138,8 +192,10 @@ export const useKanbanStore = defineStore('kanban', () => {
   }
 
   const removeTaskById = (section, id) => {
-    sections[section].value = sections[section].value.filter((task) => task.id !== id)
-    localStorage.setItem(`kanban_${section}`, JSON.stringify(sections[section].value))
+    if(confirm('Вы действительно хотите удалить задачу?')) {
+      sections[section].value = sections[section].value.filter((task) => task.id !== id)
+      localStorage.setItem(`kanban_${section}`, JSON.stringify(sections[section].value))
+    }
   }
 
   return {
