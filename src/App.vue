@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, watchEffect} from 'vue'
 import { useKanbanStore } from './stores/kanban'
 
 import AppSection from './components/AppSection.vue'
@@ -11,6 +11,11 @@ import AppModal from './components/UI/AppModal.vue'
 
 const showModal = ref(false)
 const kanban = useKanbanStore()
+watchEffect(() => {
+  for (const sectionKey of Object.keys(kanban.sections)) {
+    localStorage.setItem(`kanban_${sectionKey}`, JSON.stringify(kanban.sections[sectionKey]))
+  }
+})
 
 const toggleModal = () => {
   showModal.value = !showModal.value
