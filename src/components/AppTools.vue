@@ -10,6 +10,7 @@ defineProps({
 <template>
   <div class="tools">
     <h1 class="tools-title">{{ title }}</h1>
+    <slot name="icon" />
     <div class="tools-actions">
       <slot />
     </div>
@@ -25,6 +26,11 @@ defineProps({
 
 .tools-title {
   padding-right: 10px;
+}
+
+.tools-image {
+  width: 30px;
+  height: 30px;
 }
 
 .tools-actions {
