@@ -78,15 +78,15 @@ const addTask = (task) => {
   max-height: 100%;
   display: grid;
   grid-template-rows: 50px 1fr;
-  row-gap: 10px;
+  row-gap: var(--section-gap);
 }
 
 .sections {
-  padding: 5px;
+  padding: var(--base-padding);
   overflow: hidden;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
-  column-gap: 10px;
+  column-gap: var(--section-gap);
 }
 </style>
