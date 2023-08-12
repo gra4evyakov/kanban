@@ -125,12 +125,21 @@ export const useKanbanStore = defineStore('kanban', () => {
     ])
   }
 
+  for (const sectionKey of Object.keys(sections)) {
+    const storedSection = localStorage.getItem(`kanban_${sectionKey}`)
+    if (storedSection) {
+      sections[sectionKey].value = JSON.parse(storedSection)
+    }
+  }
+
   const addTask = (task) => {
     sections.backlog.value.push(task)
+    localStorage.setItem('kanban_backlog', JSON.stringify(sections.backlog.value))
   }
 
   const removeTaskById = (section, id) => {
     sections[section].value = sections[section].value.filter((task) => task.id !== id)
+    localStorage.setItem(`kanban_${section}`, JSON.stringify(sections[section].value))
   }
 
   return {
