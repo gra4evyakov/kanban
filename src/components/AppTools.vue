@@ -19,9 +19,10 @@ defineProps({
 
 <style scoped>
 .tools {
-  padding: 5px 10px;
   display: flex;
   align-items: center;
+
+  padding: 5px 10px;
 }
 
 .tools-title {
@@ -35,7 +36,9 @@ defineProps({
 
 .tools-actions {
   display: flex;
-  gap: 10px;
+
   margin-left: auto;
+
+  gap: 10px;
 }
 </style>

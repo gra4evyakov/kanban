@@ -53,25 +53,31 @@ const getCurrentTime = (date) => {
 <style scoped>
 .layout {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   top: 0;
   left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
   background-color: rgba(0, 0, 0, 0.466);
 }
 .modal {
-  padding: 20px;
-  width: 50%;
-  height: 50%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
-  background-color: white;
+
+  width: 50%;
+  height: 50%;
+  padding: 20px;
+
   border-radius: 15px;
+  background-color: white;
+
+  gap: 20px;
 }
 </style>

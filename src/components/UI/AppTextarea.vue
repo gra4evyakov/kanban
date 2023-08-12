@@ -26,10 +26,12 @@ const updateValue = (value) => {
 .textarea {
   width: 100%;
   padding: 5px 10px;
+
+  resize: none;
+  transition: box-shadow 0.2s ease-in-out;
+
   border: none;
   background-color: var(--ui-background);
-  transition: box-shadow 0.2s ease-in-out;
-  resize: none;
 }
 
 .textarea:hover,

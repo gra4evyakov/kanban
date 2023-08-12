@@ -16,18 +16,22 @@ const { title } = defineProps({
 
 <style scoped>
 .section {
-  overflow: hidden;
-  padding: var(--section-padding);
   display: grid;
+  overflow: hidden;
+
+  padding: var(--section-padding);
+
+  border-radius: var(--section-radius);
+  background-color: rgb(243, 242, 242);
+  box-shadow: var(--section-shadow);
+
   grid-template-rows: min-content 1fr;
   row-gap: var(--section-gap);
-  background-color: rgb(243, 242, 242);
-  border-radius: var(--section-radius);
-  box-shadow: var(--section-shadow);
 }
 
 .section-title {
   padding: var(--section-padding);
+
   text-transform: uppercase;
 }
 </style>

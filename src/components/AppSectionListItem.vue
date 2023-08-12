@@ -56,31 +56,39 @@ const openDescription = () => {
 <style scoped>
 .section-list__item {
   position: relative;
-  cursor: pointer;
-  padding: 10px;
-  margin-bottom: 10px;
+
   display: grid;
-  grid-template-rows: min-content min-content;
+
+  margin-bottom: 10px;
+  padding: 10px;
+
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+
   border-radius: var(--section-radius);
   background-color: white;
   box-shadow: var(--section-shadow);
-  transition: box-shadow 0.2s ease-in-out;
+
+  grid-template-rows: min-content min-content;
 }
 .item-title {
-  margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  margin-bottom: 5px;
 }
 
 .item-description {
   margin-top: 10px;
+
   font-size: 0.7em;
 }
 
 .item-date {
   display: flex;
   justify-content: space-between;
+
   font-size: 0.7em;
 }
 
@@ -89,35 +97,42 @@ const openDescription = () => {
 }
 
 .section-list__button {
-  opacity: 0;
   visibility: hidden;
+
   transition: opacity 0.2s ease-in-out;
+
+  opacity: 0;
 }
 
 .section-list__item:hover .section-list__button,
 .section-list__item:focus-within .section-list__button {
-  opacity: 1;
   visibility: visible;
+
+  opacity: 1;
 }
 
 .arrow {
-  width: 100%;
   position: absolute;
   bottom: -5px;
   left: 50%;
-  border-radius: 5px;
+
+  width: 100%;
+
   transform: translateX(-50%);
+
+  border-radius: 5px;
   background-color: gainsboro;
 }
 .arrow-image {
   margin: auto;
-  transform: rotate(-90deg);
+
   transition: transform 0.3s ease-in-out;
+  transform: rotate(-90deg);
 }
 
 .rotate {
-  transform: rotate(90deg);
   transition: transform 0.3s ease-in-out;
+  transform: rotate(90deg);
 }
 
 .v-enter-active,

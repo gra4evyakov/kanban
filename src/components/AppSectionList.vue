@@ -6,9 +6,12 @@
 
 <style scoped>
 .section-list {
-  padding: var(--section-padding);
-  transition: overflow 0.3s linear;
   overflow: hidden;
+
+  padding: var(--section-padding);
+
+  transition: overflow 0.3s linear;
+
   scrollbar-gutter: stable;
   /* -ms-overflow-style: none;
   scrollbar-width: none; */
@@ -28,7 +31,7 @@
 }
 .section-list::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: gainsboro;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 </style>
