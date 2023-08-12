@@ -1,22 +1,6 @@
-<script setup>
-import AppSectionListItem from './AppSectionListItem.vue'
-import { useKanbanStore } from '../stores/kanban'
-
-const { tasks, title } = defineProps({
-  tasks: Array,
-  title: String
-})
-const kanban = useKanbanStore()
-</script>
-
 <template>
   <ul class="section-list">
-    <AppSectionListItem
-      v-for="task in tasks"
-      :key="task.id"
-      :task="task"
-      @delete-item="kanban.removeTaskById(title, task.id)"
-    />
+    <slot />
   </ul>
 </template>
 

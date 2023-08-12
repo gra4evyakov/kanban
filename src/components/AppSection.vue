@@ -1,20 +1,16 @@
 <script setup>
-import AppSectionList from './AppSectionList.vue'
-
-const { title, tasks } = defineProps({
+const { title } = defineProps({
   title: String,
-  tasks: Array
+  length: Number
 })
-
-const tasksCount = tasks ? tasks.length : 0
 </script>
 
 <template>
   <div class="section">
     <div class="section-title">
-      <h3>{{ title }} {{ tasksCount }}</h3>
+      <h3>{{ title }} {{ length }}</h3>
     </div>
-    <AppSectionList :tasks="tasks" :title="title" :group="title" />
+    <slot />
   </div>
 </template>
 
