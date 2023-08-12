@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useKanbanStore } from './stores/kanban'
 import draggable from 'vuedraggable'
 
@@ -27,6 +27,15 @@ const closeModal = () => {
 const addTask = (task) => {
   kanban.addTask(task)
 }
+
+const dragOptions = computed(() => {
+  return {
+        animation: 200,
+        group: "description",
+        disabled: false,
+        ghostClass: "ghost"
+      };
+})
 </script>
 
 <template>
@@ -49,9 +58,11 @@ const addTask = (task) => {
         :length="_.length"
       >
         <AppSectionList>
-          <draggable class="draggable" v-model="kanban.sections[title]" group="tasks" item-key="id">
+          <draggable class="draggable" v-model="kanban.sections[title]" v-bind="dragOptions" group="tasks" item-key="id">
             <template #item="{ element }">
               <Appsectionlistitem
+                :class="element.fixed ? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'"
+                @click="element.fixed = !element.fixed"
                 :key="element.id"
                 :task="element"
                 @delete-item="kanban.removeTaskById(title, element.id)"
@@ -67,19 +78,26 @@ const addTask = (task) => {
 
 <style scoped>
 .kanban {
+  display: grid;
+
   height: 100%;
   max-height: 100%;
-  display: grid;
+
   grid-template-rows: 50px 1fr;
   row-gap: var(--section-gap);
 }
 
 .sections {
-  padding: var(--base-padding);
-  overflow: hidden;
   display: grid;
+  overflow: hidden;
+
+  padding: var(--base-padding);
+
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   column-gap: var(--section-gap);
+}
+.ghost {
+  background: #c1fed8;
 }
 </style>
