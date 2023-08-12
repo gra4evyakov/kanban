@@ -6,7 +6,8 @@
 
 <style scoped>
 .section-list {
-  overflow: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
   padding: var(--section-padding);
 
@@ -15,10 +16,6 @@
   scrollbar-gutter: stable;
   /* -ms-overflow-style: none;
   scrollbar-width: none; */
-}
-
-.section-list:hover {
-  overflow-y: scroll;
 }
 
 .section-list::-webkit-scrollbar-track {

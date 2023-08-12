@@ -72,7 +72,6 @@ const getCurrentTime = (date) => {
   justify-content: center;
 
   width: 50%;
-  height: 50%;
   padding: 20px;
 
   border-radius: 15px;

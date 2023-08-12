@@ -97,6 +97,14 @@ const dragOptions = computed(() => {
   grid-template-rows: 1fr;
   column-gap: var(--section-gap);
 }
+
+@media screen and (max-width: 768px){ 
+  .sections {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: var(--section-gap);
+  }
+}
 .ghost {
   background: #fec1c1;
 }
