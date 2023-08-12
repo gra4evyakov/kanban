@@ -1,9 +1,14 @@
 <script setup>
 import { ref, watchEffect } from 'vue'
 import { useKanbanStore } from './stores/kanban'
+import draggable from 'vuedraggable'
 
 import AppSection from './components/AppSection.vue'
+import AppSectionList from './components/AppSectionList.vue'
+import Appsectionlistitem from './components/AppSectionListItem.vue'
+
 import AppTools from './components/AppTools.vue'
+
 import AppButton from './components/UI/AppButton.vue'
 import AppInput from './components/UI/AppInput.vue'
 import AppPlusIcon from './components/icons/AppPlusIcon.vue'
@@ -38,11 +43,30 @@ const addTask = (task) => {
     </AppTools>
     <div class="sections">
       <AppSection
-        v-for="(section, title) in kanban.sections"
+        v-for="(_, title) in kanban.sections"
         :key="title"
         :title="title"
-        :tasks="section"
-      />
+        :length="_.length"
+      >
+        <AppSectionList>
+          <draggable
+            class="draggable"
+            v-model="kanban.sections[title]"
+            group="tasks"
+            @start="drag = true"
+            @end="drag = false"
+            item-key="id"
+          >
+            <template #item="{ element }">
+              <Appsectionlistitem
+                :key="element.id"
+                :task="element"
+                @delete-item="kanban.removeTaskById(title, element.id)"
+              />
+            </template>
+          </draggable>
+        </AppSectionList>
+      </AppSection>
     </div>
   </div>
   <AppModal v-if="showModal" :is-open="showModal" @close="closeModal" @form-data="addTask" />
