@@ -98,6 +98,6 @@ const dragOptions = computed(() => {
   column-gap: var(--section-gap);
 }
 .ghost {
-  background: #c1fed8;
+  background: #fec1c1;
 }
 </style>
