@@ -24,7 +24,7 @@ const close = () => {
     <form class="modal" @submit.prevent="formData" @click.stop>
       <h3 class="modal-title">Добавить задачу</h3>
       <AppInput v-model="task.name" rounded placeholder="Название" required />
-      <AppTextarea v-model="task.description" rounded placeholder="Описание" required />
+      <AppTextarea v-model="task.description" rounded placeholder="Описание" />
       <AppButton type="submit">Добавить задачу</AppButton>
     </form>
   </div>
