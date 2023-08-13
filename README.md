@@ -27,4 +27,6 @@
 
 ## Контакты
 
-Если у вас есть вопросы или предложения, не стесняйтесь связаться со мной по адресу your-email@example.com.
+[Telegam](https://t.me/gra4evyakov)
+[LinkedIn](https://www.linkedin.com/in/grachevyakov)
+[Почта](mailto:gra4evyakov@yandex.ru)
