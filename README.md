@@ -1,35 +1,30 @@
-# dashboard
+# Приложение "Доска задач Канбан"
 
-This template should help get you started developing with Vue 3 in Vite.
+Это простое приложение для управления задачами на доске Канбан, построенное с использованием Vue.js. Оно позволяет вам управлять задачами в различных разделах, таких как "Backlog" (Очередь), "In Progress" (В процессе), "In QA" (В QA) и "Done" (Готово).
 
-## Recommended IDE Setup
+## Структура проекта
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Проект разделен на несколько компонентов Vue и хранилище Pinia для управления состоянием доски Канбан.
 
-## Customize configuration
+- `App.vue`: Основной компонент приложения, отображающий доску Канбан.
+- `AppSection.vue`: Компонент, представляющий раздел на доске Канбан.
+- `AppSectionList.vue`: Компонент, представляющий список задач внутри раздела.
+- `AppSectionListItem.vue`: Компонент, представляющий отдельную задачу на доске Канбан.
+- `AppTools.vue`: Компонент, предоставляющий инструменты для управления доской Канбан.
+- `kanban.js`: Хранилище Pinia, управляющее данными и функциональностью доски Канбан.
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Установка
 
-## Project Setup
+1. Клонируйте репозиторий: `git clone https://github.com/gra4evyakov/kanban.git`
+2. Перейдите в директорию проекта: `cd kanban`
+3. Установите зависимости: `npm install`
+4. Запустите сервер разработки: `npm run dev`
 
-```sh
-npm install
-```
+## Использование
 
-### Compile and Hot-Reload for Development
+1. Откройте приложение в браузере по адресу `http://localhost:8080`.
+2. Используйте кнопки и функцию перетаскивания для управления задачами на доске Канбан.
 
-```sh
-npm run dev
-```
+## Контакты
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Если у вас есть вопросы или предложения, не стесняйтесь связаться со мной по адресу your-email@example.com.
