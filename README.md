@@ -27,6 +27,6 @@
 
 ## Контакты
 
-[Telegam](https://t.me/gra4evyakov)
-[LinkedIn](https://www.linkedin.com/in/grachevyakov)
-[Почта](mailto:gra4evyakov@yandex.ru)
+[Telegam](https://t.me/gra4evyakov)  
+[LinkedIn](https://www.linkedin.com/in/grachevyakov)  
+[Почта](mailto:gra4evyakov@yandex.ru)  
