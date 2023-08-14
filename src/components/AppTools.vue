@@ -21,9 +21,7 @@ defineProps({
 .tools {
   display: flex;
   align-items: center;
-  gap: 20px;
-
-  padding: 5px 10px;
+  gap: 10px;
 }
 
 .tools-title {
