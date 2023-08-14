@@ -10,10 +10,10 @@ import Appsectionlistitem from './components/AppSectionListItem.vue'
 import AppTools from './components/AppTools.vue'
 
 import AppButton from './components/UI/AppButton.vue'
-import AppInput from './components/UI/AppInput.vue'
 import AppPlusIcon from './components/icons/AppPlusIcon.vue'
 import AppModal from './components/UI/AppModal.vue'
 import AppLogoIcon from './components/icons/AppLogoIcon.vue'
+import AppSelect from './components/UI/AppSelect.vue'
 
 const showModal = ref(false)
 const kanban = useKanbanStore()
@@ -30,11 +30,11 @@ const addTask = (task) => {
 
 const dragOptions = computed(() => {
   return {
-        animation: 200,
-        group: "description",
-        disabled: false,
-        ghostClass: "ghost"
-      };
+    animation: 200,
+    group: 'description',
+    disabled: false,
+    ghostClass: 'ghost'
+  }
 })
 </script>
 
@@ -44,21 +44,27 @@ const dragOptions = computed(() => {
       <template v-slot:icon>
         <AppLogoIcon />
       </template>
-      <AppButton @click="toggleModal" rounded background>
+      <AppButton @click="toggleModal" background>
+        Новая задача
         <AppPlusIcon />
       </AppButton>
-      <AppInput rounded background placeholder="Search" />
-      <!-- v-model="kanban.searchQuery" чтобы работал поиск-->
     </AppTools>
+    <AppSelect />
     <div class="sections">
       <AppSection
-        v-for="(_, title) in kanban.sections"
+        v-for="(section, title) in kanban.sortedSections"
         :key="title"
         :title="title"
-        :length="_.length"
+        :length="section.length"
       >
         <AppSectionList>
-          <draggable class="draggable" v-model="kanban.sections[title]" v-bind="dragOptions" group="tasks" item-key="id">
+          <draggable
+            class="draggable"
+            v-model="kanban.sections[title]"
+            v-bind="dragOptions"
+            group="tasks"
+            item-key="id"
+          >
             <template #item="{ element }">
               <Appsectionlistitem
                 :class="element.fixed ? 'fa fa-anchor' : 'glyphicon glyphicon-pushpin'"
@@ -83,7 +89,7 @@ const dragOptions = computed(() => {
   height: 100%;
   max-height: 100%;
 
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: min-content min-content 1fr;
   row-gap: var(--section-gap);
 }
 
@@ -98,7 +104,7 @@ const dragOptions = computed(() => {
   column-gap: var(--section-gap);
 }
 
-@media screen and (max-width: 768px){ 
+@media screen and (max-width: 768px) {
   .sections {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
