@@ -23,7 +23,7 @@
   padding: 2px 2px;
 }
 .section-list::-webkit-scrollbar {
-  width: 7px;
+  width: 10px;
   /* display: none; */
 }
 .section-list::-webkit-scrollbar-thumb {
