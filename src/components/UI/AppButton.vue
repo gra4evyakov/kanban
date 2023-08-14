@@ -18,6 +18,9 @@ defineProps({
 
 <style scoped>
 .button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   height: fit-content;
   padding: var(--base-padding);
 
