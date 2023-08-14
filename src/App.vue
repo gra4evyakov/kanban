@@ -16,7 +16,7 @@ import AppLogoIcon from './components/icons/AppLogoIcon.vue'
 import AppSelect from './components/UI/AppSelect.vue'
 
 const showModal = ref(false)
-const kanban = useKanbanStore()
+const kanbanStore = useKanbanStore()
 
 const toggleModal = () => {
   showModal.value = !showModal.value
@@ -25,7 +25,7 @@ const closeModal = () => {
   showModal.value = false
 }
 const addTask = (task) => {
-  kanban.addTask(task)
+  kanbanStore.addTask(task)
 }
 
 const dragOptions = computed(() => {
@@ -52,7 +52,7 @@ const dragOptions = computed(() => {
     <AppSelect />
     <div class="sections">
       <AppSection
-        v-for="(section, title) in kanban.sortedSections"
+        v-for="(section, title) in kanbanStore.sortedSections"
         :key="title"
         :title="title"
         :length="section.length"
@@ -60,7 +60,7 @@ const dragOptions = computed(() => {
         <AppSectionList>
           <draggable
             class="draggable"
-            v-model="kanban.sections[title]"
+            v-model="kanbanStore.sections[title]"
             v-bind="dragOptions"
             group="tasks"
             item-key="id"
@@ -71,7 +71,7 @@ const dragOptions = computed(() => {
                 @click="element.fixed = !element.fixed"
                 :key="element.id"
                 :task="element"
-                @delete-item="kanban.removeTaskById(title, element.id)"
+                @delete-item="kanbanStore.removeTaskById(title, element.id)"
               />
             </template>
           </draggable>

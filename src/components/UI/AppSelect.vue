@@ -1,14 +1,14 @@
 <script setup>
 import { useKanbanStore } from '../../stores/kanban'
 
-const kanban = useKanbanStore()
+const kanbanStore = useKanbanStore()
 </script>
 
 <template>
   <div class="select">
     <p>Сортировка по:</p>
-    <select class="select" v-model="kanban.selectedSortOption">
-      <option v-for="item in kanban.sortList" :key="item.value" :value="item.value">
+    <select class="select" v-model="kanbanStore.selectedSortOption">
+      <option v-for="item in kanbanStore.sortOptions" :key="item.value" :value="item.value">
         {{ item.label }}
       </option>
     </select>
