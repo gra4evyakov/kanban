@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 :root {
+  --base-font: 'Montserrat', sans-serif;
   --base-padding: 5px;
 
   --section-padding: 5px;
@@ -10,13 +11,17 @@
   --section-gap: 10px;
   --section-shadow: 0px 0px 2px grey;
 
+  --section-inprogress-color: rgba(255, 0, 0, 0.1);
+  --section-inqa-color: rgba(255, 247, 0, 0.1);
+  --section-done-color: rgba(0, 255, 21, 0.1);
+
   --ui-background: gainsboro;
   --ui-radius: 5px;
   --ui-shadow: 0px 0px 15px gainsboro;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--base-font);
   font-size: 16px;
 }
 
