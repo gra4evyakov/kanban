@@ -1,8 +1,8 @@
-# Rick and Morty
+# Kanban board
 
 [Open the Application](https://gra4evyakov.github.io/kanban/)
 
-This is a Vue.js application project for viewing characters from the popular animated series "Rick and Morty." The application allows users to browse and search for characters from the show, as well as add them to their favorites list.
+This is a simple task management application built using Vue.js. It allows you to manage tasks on a Kanban board in different sections such as "Backlog," "In Progress," "In QA," and "Done."
 
 ## Tools
 
