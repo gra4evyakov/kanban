@@ -1,33 +1,55 @@
-# Приложение "Доска задач Канбан"
-[Открыть приложение](https://gra4evyakov.github.io/kanban)  
+# Rick and Morty
 
-Это простое приложение для управления задачами на доске Канбан, построенное с использованием Vue.js. Оно позволяет вам управлять задачами в различных разделах, таких как "Backlog" (Очередь), "In Progress" (В процессе), "In QA" (В QA) и "Done" (Готово).
+[Open the Application](https://gra4evyakov.github.io/kanban/)
 
-## Структура проекта
+This is a Vue.js application project for viewing characters from the popular animated series "Rick and Morty." The application allows users to browse and search for characters from the show, as well as add them to their favorites list.
 
-Проект разделен на несколько компонентов Vue и хранилище Pinia для управления состоянием доски Канбан.
+## Tools
 
-- `App.vue`: Основной компонент приложения, отображающий доску Канбан.
-- `AppSection.vue`: Компонент, представляющий раздел на доске Канбан.
-- `AppSectionList.vue`: Компонент, представляющий список задач внутри раздела.
-- `AppSectionListItem.vue`: Компонент, представляющий отдельную задачу на доске Канбан.
-- `AppTools.vue`: Компонент, предоставляющий инструменты для управления доской Канбан.
-- `kanban.js`: Хранилище Pinia, управляющее данными и функциональностью доски Канбан.
+Vue.js, Pinia, Vue Router, ESLint and Prettier
 
-## Установка
+## Project Structure
 
-1. Клонируйте репозиторий: `git clone https://github.com/gra4evyakov/kanban.git`
-2. Перейдите в директорию проекта: `cd kanban`
-3. Установите зависимости: `npm install`
-4. Запустите сервер разработки: `npm run dev`
+The project is organized as follows:
 
-## Использование
+### `components/`
 
-1. Откройте приложение в браузере по адресу `http://localhost:8080`.
-2. Используйте кнопки и функцию перетаскивания для управления задачами на доске Канбан.
+- **`icons/`**: Contains icons used in the application.
+- **`ui/`**: User interface components.
 
-## Контакты
+    - **`TheKanban.vue`**: The main Kanban component that contains sections and tasks.
+    - **`TheHeader.vue`**: Application header with a button to create a new task.
+    - **`TheSection.vue`**: Component for displaying a section in Kanban.
+    - **`TheSectionList.vue`**: List of tasks in a section.
+    - **`TheSectionListItem.vue`**: List item for tasks.
 
-[Telegam](https://t.me/gra4evyakov)  
-[LinkedIn](https://www.linkedin.com/in/grachevyakov)  
-[Почта](mailto:gra4evyakov@yandex.ru)  
+### `store/`
+
+- **`kanban.js`**: Data store for managing tasks and Kanban sections.
+
+## Installation and Running
+
+1. Clone the project repository.
+2. Install dependencies using `npm install`.
+3. Start the application with `npm run dev`.
+4. Open a web browser and navigate to the provided URL to access the application.
+
+## Features
+
+- Kanban Board: The project implements a Kanban board-style task management system, allowing users to organize tasks into different sections.
+- Task Creation: Users can create new tasks by clicking the "New Task" button in the header.
+- Task Sorting: The application provides sorting options for tasks, including sorting by priority, name, date, and time.
+- Drag-and-Drop: Tasks can be moved between sections by dragging and dropping them. This feature is facilitated by the vuedraggable library.
+- Data Persistence: Task data is stored in the browser's local storage, allowing tasks to be retained between sessions.
+
+## Usage
+
+1. Visit the homepage to view the list of tasks.
+2. Click the "New Task" button in the header, to create a new task.
+3. Use task sorting options to arrange them based on different criteria such as priority, name, date, and time.
+4. Tasks can be moved between sections by dragging and dropping them using the mouse.
+5. If you wish to delete a task, click the respective button.
+
+## Authors
+
+This project was created by [Grachev Yakov](https://github.com/gra4evyakov).
